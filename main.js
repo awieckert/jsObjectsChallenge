@@ -149,3 +149,33 @@ objectCalc(test3);
 objectCalc(test4);
 
 // Challenge 3 End -----!
+
+
+// Challenge 4 Start -----!
+var names = ['fred', 'barney'];
+var ages = [30,40];
+
+function zipObject(age, name){
+    var newObject = {};
+    for(var i = 0; i < name.length; i++){
+        newObject[name[i]] = age[i];
+    }
+
+    var namesArray = Object.getOwnPropertyNames(newObject);
+    var agesArray = Object.values(newObject);
+    console.log("Names Array: ", namesArray);
+    console.log("Ages Array: ", agesArray);
+
+    function stringBuilder3 (value1, value2){
+        var buildElement = "<h1>The Zipped Object is: " + value1[0] + ": " + value2[0] + " and " + value1[1] + ": " + value2[1] + "</h1>";
+        return buildElement;
+      }
+    console.log(newObject);
+    var objectToPrint = stringBuilder3(namesArray, agesArray);
+    printToDom2(objectToPrint, "challenge-4");
+}
+
+zipObject(ages, names);
+
+
+// End Challenge 4 ------!
