@@ -110,5 +110,42 @@ champions("england");
 
 // Object Challenge 2 End -----!
 
+// Object Challenge 3 Start -----!
+var test1 = {a: 5, b:2, operator: "add"};  //7
+var test2 = {a: 5, b:2, operator: "subtract"}; //3
+var test3 = {a: 5, b:2, operator: "multiply"}; //10
+var test4 = {a: 5, b:2, operator: "divide"}; //2.5
 
 
+function stringBuilder2 (value){
+    var buildElement = "<h1>The Sum is: " + value + "</h1>";
+    return buildElement;
+  }
+
+  function printToDom2 (stringToPrint, divID) {
+    var thingToPrint = document.getElementById(divID);
+    thingToPrint.innerHTML += stringToPrint;
+  }
+
+function objectCalc(objectMath){
+    if(objectMath.operator.toLocaleLowerCase() === "add"){
+        var keySum = objectMath.a + objectMath.b;
+    } else if (objectMath.operator.toLocaleLowerCase() === "subtract"){
+        var keySum = objectMath.a - objectMath.b;
+    } else if (objectMath.operator.toLocaleLowerCase() === "multiply"){
+        var keySum = objectMath.a * objectMath.b;
+    } else {
+        var keySum = objectMath.a / objectMath.b;
+    }
+
+    var printObjectSum = stringBuilder2(keySum);
+    printToDom2(printObjectSum, "challenge-3");
+
+}
+
+objectCalc(test1);
+objectCalc(test2);
+objectCalc(test3);
+objectCalc(test4);
+
+// Challenge 3 End -----!
