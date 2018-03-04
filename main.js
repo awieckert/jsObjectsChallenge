@@ -179,3 +179,41 @@ zipObject(ages, names);
 
 
 // End Challenge 4 ------!
+
+
+// Challenge 5 Start ---!
+
+
+var candidate1 = {
+    minSalary: 120000,
+    name: "John"
+  };
+var job1 = {
+    maxSalary: 140000
+  }
+  //output is true.  this job can hire any minSalary less than $126,000
+  
+  
+  var candidate2 = {
+    minSalary: 950000,
+    name: "Ashley"
+  };
+  var job2 = {
+    maxSalary: 100000,
+  }
+  //output is false.  this job can hire any minSalary less than $90,000
+
+function jobFit(candidate, job){
+    if (candidate.minSalary < (job.maxSalary) * 0.90){
+        var candidateFit = document.getElementById('challenge-5');
+        candidateFit.innerHTML += "<h1>Is " + candidate.name + " a match? True!</h1>";
+    } else {
+        var candidateFit = document.getElementById('challenge-5');
+        candidateFit.innerHTML += "<h1>Is " + candidate.name + " a match? False!</h1>";
+    }
+};
+
+jobFit(candidate1, job1);
+jobFit(candidate2, job2);
+
+// End Challenge-5 ------!
